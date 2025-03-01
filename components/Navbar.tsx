@@ -1,16 +1,19 @@
-import { AudioLines } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { PlayAudio } from "./PlayAudio";
 
 function Navbar() {
   return (
-    <header className="w-full container mx-auto">
+    <header className="w-full container mx-auto z-50 fixed left-1/2 -translate-x-1/2">
       <nav
         className="flex items-center justify-between h-20"
         aria-label="Main navigation"
       >
-        <Link href="/" aria-label="Home" className="transition-transform duration-300 hover:rotate-[20deg] hover:rotate-y-180 transform-gpu">
+        <Link
+          href="/"
+          aria-label="Home"
+          className="transition-transform duration-300 hover:rotate-[20deg] hover:rotate-y-180 transform-gpu"
+        >
           <Image
             src="/logo.svg"
             alt="TUK Logo"
@@ -28,9 +31,7 @@ function Navbar() {
               {item}
             </li>
           ))}
-          <button className="cursor-pointer">
-            <AudioLines className="text-white" />
-          </button>
+          <PlayAudio />
         </ul>
       </nav>
     </header>
