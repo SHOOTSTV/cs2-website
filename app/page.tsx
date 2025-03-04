@@ -1,7 +1,8 @@
-import { About } from "@/components/About";
-import { Hero } from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import { Weapons } from "@/components/Weapons";
+import { About } from "@/sections/About";
+import { GameSeries } from "@/sections/GameSeries";
+import { Hero } from "@/sections/Hero";
+import { Weapons } from "@/sections/Weapons";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <Weapons />
+      <GameSeries />
     </main>
   );
 }

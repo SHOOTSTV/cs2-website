@@ -1,8 +1,8 @@
 "use client";
 
+import WeaponModel from "@/components/WeaponModel";
+import { WeaponStat } from "@/components/WeaponStat";
 import { useState } from "react";
-import WeaponModel from "./WeaponModel";
-import { WeaponStat } from "./WeaponStat";
 
 export const Weapons = () => {
   const [currentWeaponIndex, setCurrentWeaponIndex] = useState(0);
