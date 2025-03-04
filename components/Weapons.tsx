@@ -1,15 +1,11 @@
 "use client";
 
-import { OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
+import WeaponModel from "./WeaponModel";
 import { WeaponStat } from "./WeaponStat";
 
 export const Weapons = () => {
   const [currentWeaponIndex, setCurrentWeaponIndex] = useState(0);
-
-  const ak = useGLTF("/weapons/ak47.glb");
-  const awp = useGLTF("/weapons/awp.glb");
 
   const weaponStats = [
     {
@@ -63,32 +59,10 @@ export const Weapons = () => {
           >
             →
           </button>
-          <Canvas
-            className="cursor-pointer"
-            frameloop="demand"
-            camera={{
-              position: currentWeaponIndex === 0 ? [-4, 2, 2] : [-4, -4, 2],
-              fov: 25,
-              near: 0.1,
-            }}
-          >
-            <OrbitControls
-              autoRotate
-              autoRotateSpeed={2}
-              enableZoom={false}
-              maxPolarAngle={Math.PI / 2}
-              minPolarAngle={Math.PI / 2}
-              enablePan={false}
-            />
-            <ambientLight intensity={2} />
-            <directionalLight position={[5, 5, 5]} intensity={1.5} />
-            <directionalLight position={[-5, -5, -5]} intensity={0.5} />
-            <primitive
-              object={currentWeaponIndex === 0 ? ak.scene : awp.scene}
-              scale={3}
-              rotation={[0, Math.PI / 4, 0]}
-            />
-          </Canvas>
+          <WeaponModel
+            modelName={currentWeapon.name}
+            modelPath={currentWeapon.model}
+          />
         </div>
         <h2 className="text-white text-2xl uppercase">{currentWeapon.name}</h2>
         <div className="flex flex-col gap-4 w-full max-w-md">
