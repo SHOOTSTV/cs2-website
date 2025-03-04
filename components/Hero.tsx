@@ -7,7 +7,7 @@ export const Hero = () => {
         src="/images/home-hero.jpg"
         alt="CSGO Background"
         fill
-        className="object-cover"
+        className="object-cover pointer-events-none"
       />
       <div className="container z-10 text-white pl-16 w-full">
         <h1 className="text-4xl mb-3">
