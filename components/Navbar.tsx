@@ -10,11 +10,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full container mx-auto z-50 fixed left-1/2 -translate-x-1/2">
-      <nav
-        className="flex items-center justify-between h-20"
-        aria-label="Main navigation"
-      >
+    <header className="w-full container mx-auto z-50 fixed left-1/2 -translate-x-1/2 px-4 md:px-0">
+      <nav className="flex items-center justify-between h-20">
         <Link
           href="/"
           aria-label="Home"
@@ -45,7 +42,9 @@ function Navbar() {
               {item}
             </li>
           ))}
-          <PlayAudio />
+          <li>
+            <PlayAudio />
+          </li>
         </ul>
 
         <div
