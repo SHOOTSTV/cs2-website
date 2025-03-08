@@ -43,7 +43,7 @@ export const Weapons = () => {
   return (
     <section className="relative h-screen flex items-center justify-center bg-[#383838]">
       <div className="container flex flex-col items-center justify-center gap-10">
-        <h1 className="text-4xl text-white tracking-widest uppercase">
+        <h1 className="md:text-4xl text-3xl text-white tracking-widest uppercase">
           Weapons
         </h1>
         <div className="w-full  relative h-[40vh]">
@@ -65,7 +65,7 @@ export const Weapons = () => {
           />
         </div>
         <h2 className="text-white text-2xl uppercase">{currentWeapon.name}</h2>
-        <div className="flex flex-col gap-4 w-full max-w-md">
+        <div className="px-12 md:px-0 flex flex-col gap-4 w-full max-w-md">
           <WeaponStat
             label={"DAMAGE"}
             labelValue={currentWeapon.damage}
