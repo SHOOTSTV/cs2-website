@@ -39,20 +39,17 @@ export const GameSeries = () => {
     },
   ];
   return (
-    <section className="relative h-screen flex items-center justify-center">
-      <div className="container">
-        <h2 className="text-2xl w-fit rounded-full bg-black text-white px-12 uppercase font-jaro mb-8 ">
-          PROJECTS
-        </h2>
-        <div className="space-y-16">
-          <div className="grid grid-cols-3 gap-8">
-            {gameData.slice(0, 3).map((game, index) => (
-              <GameCard key={index} {...game} />
-            ))}
-          </div>
-          <div className="grid grid-cols-2 gap-8">
-            {gameData.slice(3).map((game, index) => (
-              <GameCard key={index} {...game} />
+    <section className="relative min-h-screen flex items-center justify-center p-4">
+      <div className="container pt-16">
+        <div className="flex justify-center md:block">
+          <h2 className="text-2xl w-fit rounded-full bg-black text-white px-12 uppercase font-jaro mb-8">
+            PROJECTS
+          </h2>
+        </div>
+        <div className="md:space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:px-0">
+            {gameData.map((game, index) => (
+              <GameCard key={index} {...game} index={index} />
             ))}
           </div>
         </div>
