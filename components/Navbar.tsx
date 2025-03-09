@@ -3,15 +3,34 @@
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PlayAudio } from "./PlayAudio";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > window.outerHeight / 1.5);
+      console.log(window.outerHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full container mx-auto z-50 fixed left-1/2 -translate-x-1/2 px-4 md:px-0">
-      <nav className="flex items-center justify-between h-20">
+    <header
+      className={`flex justify-center w-full mx-auto z-50 fixed left-1/2 -translate-x-1/2 px-4 md:px-0 transition-all duration-300 ${
+        isScrolled ? "bg-black/30 backdrop-blur-sm " : ""
+      }`}
+    >
+      <nav className="flex items-center container justify-between h-20">
         <Link
           href="/"
           aria-label="Home"
